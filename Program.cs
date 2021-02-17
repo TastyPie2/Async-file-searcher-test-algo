@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Threading;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
@@ -22,9 +22,13 @@ namespace SearchAlgoTest
 
         async static void MainAsync()
         {
+            Stopwatch searchTime = new Stopwatch();
+
             Console.WriteLine("Keyword \n-s for specific");
             
             keyWord = Console.ReadLine();
+
+            searchTime.Start();
 
             if(keyWord.ToLower().StartsWith("-s"))
             {
@@ -44,7 +48,7 @@ namespace SearchAlgoTest
 
             foreach (string drive in drives)
             {
-                tasks.Add(searchDir(drive));
+                tasks.Add(searchDirAsync(drive));
             }
             
             Task[] pendingTasks = tasks.ToArray();
@@ -91,11 +95,13 @@ namespace SearchAlgoTest
                 }
             }
 
+            searchTime.Stop();
+
             Console.WriteLine("==========Summery==========");
-            Console.WriteLine("FilesFound: {0} \nFoldersFound: {1} \nPress enter to close this window", filesCount, foldersCount);
+            Console.WriteLine("Elapsedtime {0}ms \nFilesFound: {1} \nFoldersFound: {2} \nPress enter to close this window", searchTime.ElapsedMilliseconds  ,filesCount, foldersCount);
         }
 
-        static async Task searchDir(string dir)
+        static async Task searchDirAsync(string dir)
         {
             string[] subFolders;
             string[] files;
@@ -136,7 +142,7 @@ namespace SearchAlgoTest
                 {
                     try
                     {
-                        searchDir(folder);
+                        searchDirAsync(folder);
                         
                     }
                     catch

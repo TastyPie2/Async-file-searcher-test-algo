@@ -1,0 +1,80 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {},
+    "net5.0/osx-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net5.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\mathan007\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\Async-file-searcher-\\SearchAlgoTest.csproj",
+      "projectName": "SearchAlgoTest",
+      "projectPath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\Async-file-searcher-\\SearchAlgoTest.csproj",
+      "packagesPath": "C:\\Users\\mathan007\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\Async-file-searcher-\\obj\\publish\\osx-x64\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\mathan007\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\mathan007\\source\\repos\\MLModelLoader\\MLModelLoader\\bin\\Release\\net5.0\\publish": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[5.0.3, 5.0.3]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "osx-x64": {
+        "#import": []
+      }
+    }
+  }
+}

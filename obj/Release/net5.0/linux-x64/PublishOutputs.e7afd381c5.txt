@@ -1,0 +1,2 @@
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\publish\SearchAlgoTest.pdb
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\publish\SearchAlgoTest

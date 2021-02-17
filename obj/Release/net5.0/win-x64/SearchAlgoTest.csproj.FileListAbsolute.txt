@@ -1,0 +1,16 @@
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\SearchAlgoTest.exe
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\SearchAlgoTest.deps.json
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\SearchAlgoTest.runtimeconfig.json
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\SearchAlgoTest.runtimeconfig.dev.json
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\SearchAlgoTest.dll
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\ref\SearchAlgoTest.dll
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\bin\Release\net5.0\win-x64\SearchAlgoTest.pdb
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.AssemblyInfoInputs.cache
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.AssemblyInfo.cs
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.csproj.CoreCompileInputs.cache
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.dll
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\ref\SearchAlgoTest.dll
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.pdb
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.genruntimeconfig.cache
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\win-x64\SearchAlgoTest.csprojAssemblyReference.cache

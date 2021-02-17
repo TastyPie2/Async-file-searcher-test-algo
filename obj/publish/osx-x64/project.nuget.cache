@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0N0pGYJPfVFArwxXWLIv+pKiJjAN7UYnjaSsK5KUgeRP5nFpWt00Bg2tcKs+WZ6friC7Sz+Tepv7dbrA65R/OA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\Async-file-searcher-\\SearchAlgoTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mathan007\\.nuget\\packages\\microsoft.netcore.app.host.osx-x64\\5.0.3\\microsoft.netcore.app.host.osx-x64.5.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

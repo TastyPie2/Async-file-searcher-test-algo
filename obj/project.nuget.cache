@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0AGjPZ3JDaifoLl+Y8eUKDxQUR2s3JI+NEp9BH0JS+RyJyICeIaOGLamDSYXsioUqOij3/c+zDYQGYbyOQAmTg==",
+  "dgSpecHash": "vpua2VQMEkWEzYaWkugouOtPBUUj9J+0sW83TlAt64WS7gRwWWITquDyVe4gfpj3KL/N50aKUCskLmTtWKSF4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\SearchAlgoTest.csproj",
+  "projectFilePath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\Async-file-searcher-\\SearchAlgoTest.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
