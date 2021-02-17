@@ -99,6 +99,9 @@ namespace SearchAlgoTest
 
             Console.WriteLine("==========Summery==========");
             Console.WriteLine("Elapsedtime {0}ms \nFilesFound: {1} \nFoldersFound: {2} \nPress enter to close this window", searchTime.ElapsedMilliseconds  ,filesCount, foldersCount);
+
+            Console.ReadKey();
+            Console.ReadLine();
         }
 
         static async Task searchDirAsync(string dir)
