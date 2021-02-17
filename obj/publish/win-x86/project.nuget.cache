@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vDfqE7jnDusHvzgCaIvfs6UGkv8PHRgNP2GOsUA3Qkluzex49E+gZ7psC+oVweb/wR8wRbbSMJsHQjA28ntfBg==",
+  "dgSpecHash": "M7EuJ85XkAimwTi8eFphKuix1+Bkse3R3RctslaRtzfuRSRAWxX1EIHmZuMIIM1CWGcwM2mRH3m3odUZkLc1cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\SearchAlgoTest.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\mathan007\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\5.0.3\\microsoft.netcore.app.runtime.win-x86.5.0.3.nupkg.sha512",
-    "C:\\Users\\mathan007\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\5.0.3\\microsoft.windowsdesktop.app.runtime.win-x86.5.0.3.nupkg.sha512",
-    "C:\\Users\\mathan007\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\5.0.3\\microsoft.aspnetcore.app.runtime.win-x86.5.0.3.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\mathan007\\source\\repos\\SearchAlgoTest\\SearchAlgoTest\\Async-file-searcher-\\SearchAlgoTest.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

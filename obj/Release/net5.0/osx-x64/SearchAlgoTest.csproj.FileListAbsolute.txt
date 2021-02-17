@@ -13,3 +13,4 @@ C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searche
 C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\osx-x64\ref\SearchAlgoTest.dll
 C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\osx-x64\SearchAlgoTest.pdb
 C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\osx-x64\SearchAlgoTest.genruntimeconfig.cache
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\Async-file-searcher-\obj\Release\net5.0\osx-x64\SearchAlgoTest.csprojAssemblyReference.cache
