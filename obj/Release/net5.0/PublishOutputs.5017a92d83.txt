@@ -1,0 +1,5 @@
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\bin\Release\net5.0\publish\SearchAlgoTest.exe
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\bin\Release\net5.0\publish\SearchAlgoTest.dll
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\bin\Release\net5.0\publish\SearchAlgoTest.deps.json
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\bin\Release\net5.0\publish\SearchAlgoTest.runtimeconfig.json
+C:\Users\mathan007\source\repos\SearchAlgoTest\SearchAlgoTest\bin\Release\net5.0\publish\SearchAlgoTest.pdb
