@@ -10,12 +10,16 @@ namespace SearchAlgoTest
 {
     class Program
     {
+        //
+        //In terms of speed this is a downgrade
+        //
+
         //global
         public static int filesCount = 0;
         public static int foldersCount = 0;
         public static string keyWord;
         public static bool specificMode = false;
-        public static List<Task> tasks = new List<Task>();
+        public static List<Thread> threads = new List<Thread>();
 
 
         static void Main()
@@ -44,50 +48,32 @@ namespace SearchAlgoTest
 
             foreach (string drive in drives)
             {
-                 new Thread(() => searchDrive(drive)).Start();
+                Console.WriteLine("Search started in {0}", drive);
+
+                Thread operation = new Thread(() => searchDir(drive));
+
+                operation.Name = string.Format("WorkerThread {0}", drive);
+
+                operation.Priority = ThreadPriority.Highest;
+
+                operation.Start();
+
+                threads.Add(operation);
             }
             
-            Task[] pendingTasks = tasks.ToArray();
+            Thread[] pendingThreads = threads.ToArray();
 
-            while(true)
+            bool isDone = false;
+
+            while (!isDone)
             {
-                if(Task.WhenAny(pendingTasks).IsFaulted || Task.WhenAny(pendingTasks).IsCanceled || Task.WhenAny(pendingTasks).IsCompleted)
+                isDone = true;
+                for(int i = 0; i<pendingThreads.Length; i++)
                 {
-                    for(int i = 0; i<pendingTasks.Length; i++)
+                    if(pendingThreads[i].IsAlive)
                     {
-                        Task task = pendingTasks[i];
-
-                        if(task.IsCanceled || task.IsCompleted || task.IsFaulted)
-                        {
-                            pendingTasks[i] = null;
-                        }
+                        isDone = false;
                     }
-                }
-
-                bool isDone = false;
-
-                for(int i = 0; i<pendingTasks.Length; i++)
-                {
-                    try
-                    {
-                        if (pendingTasks[i] == null)
-                        {
-                            isDone = true;
-                        }
-                        else
-                        {
-                            isDone = false;
-                        }
-                    }
-                    catch(Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
-                }
-
-                if(isDone)
-                {
-                    break;
                 }
             }
 
@@ -100,7 +86,7 @@ namespace SearchAlgoTest
             Console.ReadLine();
         }
 
-        static async Task searchDirAsync(string dir)
+        static void searchDir(string dir)
         {
             string[] subFolders;
             string[] files;
@@ -140,7 +126,7 @@ namespace SearchAlgoTest
                 {
                     try
                     {
-                        searchDirAsync(folder);
+                        searchDir(folder);
                         
                     }
                     catch
@@ -160,7 +146,7 @@ namespace SearchAlgoTest
                     {
                         if (file.ToLower().Split(@"\").Last().Contains(keyWord))
                         {
-                            Console.WriteLine(file);
+                            //i suspected that writing to console was bottlenecking the rest of the program
                             new Thread(() => writeWithNewThread(file)).Start();
                             filesCount++;
                         }
@@ -176,11 +162,6 @@ namespace SearchAlgoTest
         static async Task writeWithNewThread(string x)
         {
             Console.WriteLine(x);
-        }
-
-        static async Task searchDrive(string drive)
-        {
-            tasks.Add(searchDirAsync(drive));
         }
 
     }
