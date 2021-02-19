@@ -53,45 +53,14 @@ namespace SearchAlgoTest
             
             Task[] pendingTasks = tasks.ToArray();
 
-            while(true)
+            bool isDone = false;
+
+            while(!isDone)
             {
-                if(Task.WhenAny(pendingTasks).IsFaulted || Task.WhenAny(pendingTasks).IsCanceled || Task.WhenAny(pendingTasks).IsCompleted)
+                isDone = true;
+                for(int i = 0; i<pendingTasks.Length;i++)
                 {
-                    for(int i = 0; i<pendingTasks.Length; i++)
-                    {
-                        Task task = pendingTasks[i];
-
-                        if(task.IsCanceled || task.IsCompleted || task.IsFaulted)
-                        {
-                            pendingTasks[i] = null;
-                        }
-                    }
-                }
-
-                bool isDone = false;
-
-                for(int i = 0; i<pendingTasks.Length; i++)
-                {
-                    try
-                    {
-                        if (pendingTasks[i] == null)
-                        {
-                            isDone = true;
-                        }
-                        else
-                        {
-                            isDone = false;
-                        }
-                    }
-                    catch(Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
-                }
-
-                if(isDone)
-                {
-                    break;
+                    pendingTasks[i].Wait();
                 }
             }
 
@@ -130,8 +99,9 @@ namespace SearchAlgoTest
             {
                 List<string[]> DirInfo = getDirInfo(dir);
 
-                subFolders = DirInfo[0];
-                files = DirInfo[1];
+
+                subFolders = Directory.GetDirectories(dir));
+                files = Directory.GetFiles(dir);
    
             }
             catch(Exception)
@@ -177,14 +147,5 @@ namespace SearchAlgoTest
             }
         }
 
-        static List<string[]> getDirInfo(string dir)
-        {
-            List<string[]> info = new List<string[]>();
-
-            info.Add(Directory.GetDirectories(dir));
-            info.Add(Directory.GetFiles(dir));
-
-            return info;
-        }
     }
 }
