@@ -2,6 +2,7 @@
 using System.IO;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 
@@ -14,13 +15,10 @@ namespace SearchAlgoTest
         public static int foldersCount = 0;
         public static string keyWord;
         public static bool specificMode = false;
+        public static List<Task> tasks = new List<Task>();
+
 
         static void Main()
-        {
-            MainAsync();
-        }
-
-        async static void MainAsync()
         {
             Stopwatch searchTime = new Stopwatch();
 
@@ -42,13 +40,11 @@ namespace SearchAlgoTest
  
             string[] drives = Environment.GetLogicalDrives();
 
-            List<Task> tasks = new List<Task>();
-
             Console.WriteLine("==========Results==========");
 
             foreach (string drive in drives)
             {
-                tasks.Add(searchDirAsync(drive));
+                 new Thread(() => searchDrive(drive)).Start();
             }
             
             Task[] pendingTasks = tasks.ToArray();
@@ -113,7 +109,7 @@ namespace SearchAlgoTest
             {
                 if (dir.Split(@"\").Last().Contains(keyWord))
                 {
-                    Console.WriteLine(dir);
+                    new Thread(() => writeWithNewThread(dir)).Start();
                     foldersCount++;
                 }
             }
@@ -121,17 +117,16 @@ namespace SearchAlgoTest
             {
                 if (dir.ToLower().Split(@"\").Last().Contains(keyWord))
                 {
-                    Console.WriteLine(dir);
+                    new Thread(() => writeWithNewThread(dir)).Start();
                     foldersCount++;
                 }
             }
 
             try
             {
-                List<string[]> DirInfo = getDirInfo(dir);
 
-                subFolders = DirInfo[0];
-                files = DirInfo[1];
+                subFolders = Directory.GetDirectories(dir);
+                files = Directory.GetFiles(dir);
    
             }
             catch(Exception)
@@ -157,7 +152,7 @@ namespace SearchAlgoTest
                     {
                         if (file.Split(@"\").Last().Contains(keyWord))
                         {
-                            Console.WriteLine(file);
+                            new Thread(() => writeWithNewThread(file)).Start();
                             filesCount++;
                         }
                     }
@@ -166,6 +161,7 @@ namespace SearchAlgoTest
                         if (file.ToLower().Split(@"\").Last().Contains(keyWord))
                         {
                             Console.WriteLine(file);
+                            new Thread(() => writeWithNewThread(file)).Start();
                             filesCount++;
                         }
                     }
@@ -177,14 +173,15 @@ namespace SearchAlgoTest
             }
         }
 
-        static List<string[]> getDirInfo(string dir)
+        static async Task writeWithNewThread(string x)
         {
-            List<string[]> info = new List<string[]>();
-
-            info.Add(Directory.GetDirectories(dir));
-            info.Add(Directory.GetFiles(dir));
-
-            return info;
+            Console.WriteLine(x);
         }
+
+        static async Task searchDrive(string drive)
+        {
+            tasks.Add(searchDirAsync(drive));
+        }
+
     }
 }
