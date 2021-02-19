@@ -25,21 +25,21 @@ namespace SearchAlgoTest
             Stopwatch searchTime = new Stopwatch();
 
             Console.WriteLine("Keyword \n-s for specific");
-            
+
             keyWord = Console.ReadLine();
 
             searchTime.Start();
 
-            if(keyWord.ToLower().StartsWith("-s"))
+            if (keyWord.ToLower().StartsWith("-s"))
             {
-                keyWord = keyWord.Remove(0,2).TrimStart();
+                keyWord = keyWord.Remove(0, 2).TrimStart();
 
                 Console.Title = keyWord;
 
                 specificMode = true;
-                
+
             }
- 
+
             string[] drives = Environment.GetLogicalDrives();
 
             List<Task> tasks = new List<Task>();
@@ -50,15 +50,15 @@ namespace SearchAlgoTest
             {
                 tasks.Add(searchDirAsync(drive));
             }
-            
+
             Task[] pendingTasks = tasks.ToArray();
 
             bool isDone = false;
 
-            while(!isDone)
+            while (!isDone)
             {
                 isDone = true;
-                for(int i = 0; i<pendingTasks.Length;i++)
+                for (int i = 0; i < pendingTasks.Length; i++)
                 {
                     pendingTasks[i].Wait();
                 }
@@ -67,7 +67,7 @@ namespace SearchAlgoTest
             searchTime.Stop();
 
             Console.WriteLine("==========Summery==========");
-            Console.WriteLine("Elapsedtime {0}ms \nFilesFound: {1} \nFoldersFound: {2} \nPress enter to close this window", searchTime.ElapsedMilliseconds  ,filesCount, foldersCount);
+            Console.WriteLine("Elapsedtime {0}ms \nFilesFound: {1} \nFoldersFound: {2} \nPress enter to close this window", searchTime.ElapsedMilliseconds, filesCount, foldersCount);
 
             Console.ReadKey();
             Console.ReadLine();
@@ -97,26 +97,23 @@ namespace SearchAlgoTest
 
             try
             {
-                List<string[]> DirInfo = getDirInfo(dir);
-
-
-                subFolders = Directory.GetDirectories(dir));
+                subFolders = Directory.GetDirectories(dir);
                 files = Directory.GetFiles(dir);
-   
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return;
             }
             try
             {
 
-                foreach(string folder in subFolders)
+                foreach (string folder in subFolders)
                 {
                     try
                     {
                         searchDirAsync(folder);
-                        
+
                     }
                     catch
                     { }
@@ -141,7 +138,7 @@ namespace SearchAlgoTest
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
